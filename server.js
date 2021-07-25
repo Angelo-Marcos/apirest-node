@@ -67,10 +67,12 @@ app.put("/books/:id", function (req, res) {
     if (!book) return res.status(204).json();
 
     const {
-        title
+        title,
+        author
     } = req.body;
 
     book.title = title;
+    book.author = author;
 
     res.json(book);
 });
