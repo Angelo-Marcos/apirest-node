@@ -3,12 +3,6 @@ const app = express()
 const data = require("./data.json");
 const cors = require("cors");
 
-let port = process.env.PORT;
-if (port == null || port == "") {
-    port = 8000;
-}
-app.listen(port);
-
 // Verbos HTTP
 // GET: Receber dados de uma Resource.
 // POST: Enviar dados ou informações para serem processados por um Resource.
@@ -18,7 +12,9 @@ app.listen(port);
 app.use(express.json())
 app.use(cors())
 
-app.get("/clients", function (req, res) {
+// app.use("/", (req, res) => res.send("/clients"))
+
+app.get("/", function (req, res) {
     res.json(data);
 });
 
