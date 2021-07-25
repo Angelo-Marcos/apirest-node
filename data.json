@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "title": "A Maldição do Tigre",
+    "author": "Colleen",
+    "release_year": 2021,
+    "state": "Lido"
+  },
+
+  {
+    "id": 2,
+    "title": "Ladrão de Almas",
+    "author": "Sharon",
+    "release_year": 2020,
+    "state": "Lido"
+  },
+
+  {
+    "id": 3,
+    "title": "A vida que Ninguém Vê",
+    "author": "Maria",
+    "release_year": 2019,
+    "state": "Lido"
+  },
+
+  {
+    "id": 4,
+    "title": "Eu Christiane F",
+    "author": "Kai Hermann",
+    "release_year": 2012,
+    "state": "Lido"
+  }
+]
