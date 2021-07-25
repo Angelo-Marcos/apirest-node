@@ -79,7 +79,7 @@ app.delete("/books/:id", function (req, res) {
     const {
         id
     } = req.params;
-    const booksFiltered = data.filter(client => book.id != id)
+    const booksFiltered = data.filter(book => book.id != id)
 
     res.json(booksFiltered);
 });
