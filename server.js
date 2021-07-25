@@ -1,3 +1,9 @@
+/* 
+Descricao : Arquivo server.js para implementação de api rest usando verbos HTTP.
+Aluno : Angelo Marcos de Oliveira
+Data : 25/07/2021
+*/
+
 const express = require('express');
 const app = express()
 const data = require("./data.json");
@@ -23,18 +29,18 @@ app.get("/", function (req, res) {
 });
 
 
-app.get("/clients/:id", function (req, res) {
+app.get("/books/:id", function (req, res) {
     const {
         id
     } = req.params;
-    const client = data.find(cli => cli.id == id);
+    const book = data.find(bok => bok.id == id);
 
-    if (!client) return res.status(204).json();
+    if (!book) return res.status(204).json();
 
-    res.json(client);
+    res.json(book);
 });
 
-app.post("/clients", function (req, res) {
+app.post("/books", function (req, res) {
     const {
         title,
         author,
@@ -52,31 +58,30 @@ app.post("/clients", function (req, res) {
     });
 });
 
-app.put("/clients/:id", function (req, res) {
+app.put("/books/:id", function (req, res) {
     const {
         id
     } = req.params;
-    const client = data.find(cli => cli.id == id);
+    const book = data.find(bok => bok.id == id);
 
-    if (!client) return res.status(204).json();
+    if (!book) return res.status(204).json();
 
     const {
         title
     } = req.body;
 
-    client.title = title;
+    book.title = title;
 
-    res.json(client);
-
+    res.json(book);
 });
 
-app.delete("/clients/:id", function (req, res) {
+app.delete("/books/:id", function (req, res) {
     const {
         id
     } = req.params;
-    const clientsFiltered = data.filter(client => client.id != id)
+    const booksFiltered = data.filter(client => book.id != id)
 
-    res.json(clientsFiltered);
+    res.json(booksFiltered);
 });
 
 
