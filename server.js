@@ -24,7 +24,7 @@ app.listen(port);
 app.use(express.json())
 app.use(cors())
 
-app.get("/", function (req, res) {
+app.get("/books", function (req, res) {
     res.json(data);
 });
 
