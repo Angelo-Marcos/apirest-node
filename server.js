@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express()
 const data = require("./data.json");
+const cors = require("cors");
 
 // Verbos HTTP
 // GET: Receber dados de uma Resource.
@@ -9,6 +10,7 @@ const data = require("./data.json");
 // DELETE: Deletar um Resource.
 
 app.use(express.json())
+app.use(cors())
 
 app.get("/clients", function (req, res) {
     res.json(data);
