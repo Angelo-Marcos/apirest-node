@@ -8,6 +8,7 @@ const express = require('express');
 const app = express()
 const data = require("./data.json");
 const cors = require("cors");
+const morgan = require('morgan');
 
 let port = process.env.PORT;
 if (port == null || port == "") {
@@ -22,6 +23,10 @@ app.listen(port);
 // DELETE: Deletar um Resource.
 
 app.use(express.json())
+app.use(express.urlencoded({
+    extended: true
+}))
+app.use(morgan('dev'))
 app.use(cors())
 
 app.get("/books", function (req, res) {
